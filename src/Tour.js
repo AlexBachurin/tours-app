@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
-export default function Tour({ id, image, name, price, info }) {
+export default function Tour({ id, image, name, price, info, removeTour }) {
     //show more
     const [readMore, setReadMore] = useState(false);
     //slice our info property to not fully show description, only part of it
@@ -30,7 +30,7 @@ export default function Tour({ id, image, name, price, info }) {
                         {readMore ? 'Show Less' : 'Read More'}
                     </button>
                 </p>
-                <button className="delete-btn">not interested</button>
+                <button onClick={() => removeTour(id)} className="delete-btn">not interested</button>
             </footer>
         </article>
     )

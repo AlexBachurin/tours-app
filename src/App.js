@@ -29,6 +29,16 @@ function App() {
     fetchTours();
   }, [])
 
+  //remove tour
+  const removeTour = (id) => {
+    //find clicked tour by id and get new arr without clicked item
+    const leftOverTours = tours.filter(tour => tour.id !== id);
+    //place new arr into tours state
+    setTours(leftOverTours);
+    console.log(id);
+
+  }
+
   if (loading) {
     return (
       <main>
@@ -38,7 +48,7 @@ function App() {
   }
   return (
     <main>
-      <Tours tours={tours} />
+      <Tours tours={tours} removeTour={removeTour} fetchTours={fetchTours} />
     </main>
   );
 }

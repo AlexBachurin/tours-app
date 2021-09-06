@@ -135,7 +135,9 @@ p {
 }
 .btn {
   background: var(--clr-primary-5);
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items:center;
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius);
   text-transform: capitalize;
@@ -143,6 +145,7 @@ p {
   letter-spacing: var(--spacing);
   border-color: transparent;
   cursor: pointer;
+  margin: 0 auto;
   margin-top: 2rem;
   font-size: 1.2rem;
 }
